@@ -12,7 +12,9 @@
     <footer class="grid grid-cols-4 border-t border-gray-600">
       <router-link
         :to="route.path"
-        class="p-4 text-center text-3xl text-gray-300"
+        :class="`p-4 text-center text-3xl ${
+          route.name == $route.name ? 'text-green-500' : 'text-gray-300'
+        }`"
         v-for="(route, index) in routes"
         :key="index"
       >
@@ -52,5 +54,6 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 </style>
